@@ -75,6 +75,46 @@ public function __construct()
     	
     }
   
+ public function editCliente($id)
+ {
+  			$datos=Cliente::find($id);
+			
+			 return View::make('clientes.editcliente',compact('datos'));
+
+			}
+
+
+public function postUpdate()
+	{
+
+		//print_r(Input::get());
+			$datos=Cliente::find(Input::get('id'));
+			$datos->nombre=Input::get('nombre');
+			$datos->apellido=Input::get('apellido');
+			$datos->apellido2=Input::get('apellido2');
+			$datos->direccion=Input::get('direccion');
+			$datos->departamento=Input::get('departamento');
+			$datos->provincia=Input::get('provincia');
+			$datos->distrito=Input::get('distrito');
+			$datos->dni=Input::get('dni');
+			$datos->fech_nac=Input::get('fech_nac');
+			$datos->celular=Input::get('celular');
+			$datos->celular2=Input::get('celular2');
+			$datos->correo=Input::get('correo');
+			$datos->save();
+			
+            Session::flash('mensaje', 'El registro se ha modificado correctamente');
+           return Redirect::to('clientes');
+           	//return View::make('clientes.cliente');
+      }
+
+      public function showCliente($id)
+ 		{
+  			$datos=Cliente::find($id);
+			
+			 return View::make('clientes.showcliente',compact('datos'));
+
+			}
     
 }
 

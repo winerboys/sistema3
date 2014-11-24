@@ -58,7 +58,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">VENTAS<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="<?=URL::to('clientes');?>">NUEVO</a></li>
-                    <li><a href="<?=URL::to('clientes');?>">VENTAS</a></li>
+                    <li><a href="<?=URL::to('ventas');?>">VENTAS</a></li>
                 </ul>
                 </li>
 

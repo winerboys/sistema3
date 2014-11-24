@@ -15,7 +15,13 @@ Route::get('/', function()
 {
 	return View::make('login');
 });
-
+Route::get('pdf', function()
+{
+    $html = '<html><body>'
+            . '<p>prueba de pdf.</p>'
+            . '</body></html>';
+    return PDF::load($html, 'A4', 'portrait')->show();
+});
 //login
 Route::post('/login', 'UserLogin@user');
 
@@ -32,6 +38,10 @@ Route::get('logout', function()
 	Route::get('/clientes', 'ClienteController@getCliente');
 	Route::post('/inclientes', 'ClienteController@postCliente');
 	Route::get('/addclientes', 'ClienteController@addCliente');
+	Route::any('/editclientes/{id?}', 'ClienteController@editCliente');
+	Route::any('/update', 'ClienteController@postUpdate');
+	Route::any('/eliminar/{id}', 'ActualizarController@postEliminar');
+	Route::any('/show/{id}', 'ClienteController@showCliente');
 	//ir a ingresar clientes
 //Rutas de estado venta
 	Route::any('/pventa/ingresar/{id?}', 'PventaController@getCreate');
@@ -39,10 +49,15 @@ Route::get('logout', function()
 	Route::any('/pventa/show', 'PventaController@index');
 //rutas de pagos
 	Route::any('/pago/ingresar/{id?}', 'PagoController@getCreate');
+
+
 //rutas de las ventas
-	Route::get('/ventas', 'VentaController@getVenta');
+	Route::get('/ventas','VentaController@getVenta');
 	Route::post('/pventa','VentaController@postVenta' );
 	Route::get('/inventa/{id?}','VentaController@addVenta');
+	Route::any('/actualizarventas/{id?}', 'VentaController@actualizarVenta');
+	Route::any('/update', 'VentaController@postUpdate');
+	Route::any('/show/{id}', 'VentaController@showVenta');
 
 //rutas post venta
 	Route::any('/postventa/{id}', 'PventaController@getCreate');

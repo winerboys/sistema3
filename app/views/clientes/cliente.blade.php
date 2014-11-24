@@ -21,6 +21,8 @@
               </div><!cierra-->
        
                @endif
+
+
     <div class="table-responsive">
      <table class=" table table-condensed table-striped buscarEnTablaCategoria">
         <tr>
@@ -60,8 +62,8 @@
                     <li><a href="inventa/{{$dato->id}}"><span class=" glyphicon glyphicon-earphone"></span> Internet</a></li>
                      <li><a href="#"><span class=" glyphicon glyphicon-hd-video"></span> DTH</a></li>
                 </ul> </div> </td>
-        <td><a title="Ver" class="btn btn-success btn-sm"href="imprimir"><span class="glyphicon glyphicon-eye-open"></span></a></td>
-        <td><a title="Editar" class="btn btn-primary btn-sm"href="imprimir"><span class="glyphicon glyphicon-edit"></span></a></td>
+        <td><a title="Ver" class="btn btn-success btn-sm"href="show/{{$dato->id}}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+        <td><a title="Editar" class="btn btn-primary btn-sm"href="editclientes/{{$dato->id}}"><span class="glyphicon glyphicon-edit"></span></a></td>
         <td><a title="Eliminar" class="btn btn-danger btn-sm"href="imprimir"><span class="glyphicon glyphicon-trash"></span></a></td>
    
     </tr>

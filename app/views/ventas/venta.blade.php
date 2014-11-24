@@ -46,6 +46,10 @@
         <td>{{$dato->user->nombre}}</td>
         <!--<td><input type="button" id="{{$dato->id}}" value="Editar" onclick="editarUsuario(this.id);"></td>-->
         <td><a href="pventa/ingresar/{{$dato->id}}">estado</a></td>
+        <td><a title="Ver" class="btn btn-success btn-sm"href="show/{{$dato->id}}"><span class="glyphicon glyphicon-eye-open"></span></a></td>
+        <td><a title="Editar" class="btn btn-primary btn-sm"href="actualizarventas/{{$dato->id}}"><span class="glyphicon glyphicon-edit"></span></a></td>
+        <td><a title="Eliminar" class="btn btn-danger btn-sm"href="imprimir"><span class="glyphicon glyphicon-trash"></span></a></td>
+   
         </tr>    		
     @endforeach
 	</table>
